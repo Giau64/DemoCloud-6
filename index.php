@@ -207,7 +207,7 @@
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">User Navigation </h2>
                         <ul>
-                            <li><a href="#">My account</a></li>
+                            <li><a href="?page=update_customer">My account</a></li>
                             <li><a href="#">Order history</a></li>
                             <li><a href="#">Wishlist</a></li>
                             <li><a href="#">Vendor contact</a></li>
@@ -220,10 +220,10 @@
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categories</h2>
                         <ul>
-                            <li><a href="#">Product Toys</a></li>
-                            <li><a href="#">Home Toys</a></li>
-                            <li><a href="#">Car Toys</a></li>
-                            <li><a href="#">Gadets</a></li>
+                            <li><a href="?page=shop">Product Toys</a></li>
+                            <li><a href="?page=shop">Home Toys</a></li>
+                            <li><a href="?page=shop">Car Toys</a></li>
+                            <li><a href="?page=shop">Gadets</a></li>
                         </ul>                        
                     </div>
                 </div>
