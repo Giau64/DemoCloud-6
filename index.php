@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TNG RICH</title>
-    <link rel="shortcut icon" type="image/x-icon" href="logo/mau-logo-vo-thuat-co-truyen-01.JPG">
+    <link rel="shortcut icon" type="image/x-icon" href="logo/mau-logo-vo-thuat-co-truyen-01.jpg">
     
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
