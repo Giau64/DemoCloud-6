@@ -176,6 +176,8 @@
             include_once("search.php");
         }elseif($page== "update_product"){
             include_once("updateproduct.php");
+        }elseif($page== "update_customer"){
+            include_once("update_customer.php");
         }
     }
     else{
@@ -193,10 +195,10 @@
                         <h2>Kids'<span>Toys</span></h2>
                         <p>Customers can search and content can contact admin through the features described below in detail</p>
                         <div class="footer-social">
-                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/koprodelacc" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.facebook.com/koprodelacc" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/koprodelacc" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="https://www.facebook.com/koprodelacc" target="_blank"><i class="fa fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
