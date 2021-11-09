@@ -5,10 +5,10 @@
 	include_once("connection.php");
 	Function bind_Category_List($conn,$selectedValue){
 		$sqlstring="SELECT cat_id, cat_name FROM category";
-		$result = mysqli_query($conn, $sqlstring);
+		$result = pg_query($conn, $sqlstring);
 		echo "<select name='CategoryList' class='form-control'>
 			<option value='0'>Chose category</option>";
-			while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+			while ($row = pg_fetch_array($result,NULL,PGSQL_ASSOC)){
 				if($row['Cat_ID'] == $selectedValue)
 				{
 					echo "<option value='".$row['cat_id']."' selected>".$row['cat_name']."</option>";
@@ -26,8 +26,8 @@
 		quantity, image, cat_id
 		FROM product WHERE product_id = '$id' ";
 
-		$result = mysqli_query($conn, $sqlstring);
-		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		$result = pg_query($conn, $sqlstring);
+		$row = pg_fetch_array($result,NULL,PGSQL_ASSOC);
 		
 		$proname =$row["product_name"];
 		$detail=$row['prodes'];
@@ -188,8 +188,8 @@
 					if($pic['size']<= 614400)
 					{
 						$sq="SELECT * FROM product WHERE product_id != '$id' and product_name='$proname'";
-						$result=mysqli_query($conn,$sq);
-						if(mysqli_num_rows($result)==0)
+						$result=pg_query($conn,$sq);
+						if(pg_num_rows($result)==0)
 						{
 						copy($pic['tmp_name'], "product-imgs/".$pic['name']);
 						$filePic = $pic['name'];
@@ -197,7 +197,7 @@
 						$sqlstring="UPDATE product SET product_name='$proname', price=$price, 
 						prodes='$detail', quantity=$qty, image='$filePic',cat_id='$category'
 						 WHERE product_id='$id'";
-						mysqli_query($conn,$sqlstring);
+						pg_query($conn,$sqlstring);
 						echo '<meta http-equiv="refresh" content="0;URL=?page=product"/>';
 						}
 						else 
@@ -218,13 +218,13 @@
 			else
 			{
 				$sq="SELECT * FROM product where product_id != '$id' and product_name='$proname'";
-				$result= mysqli_query($conn,$sq);
-				if(mysqli_num_rows($result)==0)
+				$result= pg_query($conn,$sq);
+				if(pg_num_rows($result)==0)
 				{
 					$sqlstring="UPDATE product SET product_name='$proname',
 					price=$price,prodes='$detail',quantity=$qty,
 					cat_id='$category' WHERE product_id='$id'";
-					mysqli_query($conn,$sqlstring);
+					pg_query($conn,$sqlstring);
 					echo '<meta http-equiv="refresh" content="0;URL=?page=product"/>';
 				}
 				else 

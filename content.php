@@ -88,14 +88,14 @@
                         <div class="product-carousel">
                         <?php
                             // 	include_once("database.php");
-                            $result = mysqli_query($conn, "SELECT * FROM product");
+                            $result = pg_query($conn, "SELECT * FROM product");
 
                             if (!$result) { //add this check.
-                                die('Invalid query: ' . mysqli_error($conn));
+                                die('Invalid query: ' . pg_errormessage($conn));
                             }
 
                         
-                            while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                            while($row = pg_fetch_array($result,NULL,PGSQL_ASSOC)){
                         ?>
                             <div class="single-product">
                                 <div class="product-f-image">
