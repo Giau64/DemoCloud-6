@@ -24,7 +24,7 @@
                     die('Invalid query: ' . pg_errormessage($conn));
                     }
                     else {
-                    while($row = pg_fetch_array($result,NULL,PGSQL_ASSOC)){
+                    while($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
                     ?>
             <div class="row">
                 <div class="col-md-3 col-sm-6">

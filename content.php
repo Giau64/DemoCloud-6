@@ -95,7 +95,7 @@
                             }
 
                         
-                            while($row = pg_fetch_array($result,NULL,PGSQL_ASSOC)){
+                            while($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
                         ?>
                             <div class="single-product">
                                 <div class="product-f-image">

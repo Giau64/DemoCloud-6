@@ -26,7 +26,7 @@ function deleteConfirm() {
                 $id = $_GET["id"];
                 $sq = "SELECT image from product WHERE product_id='$id'";
                 $res = pg_query($conn,$sq);
-                $row = pg_fetch_array($res,NULL,PGSQL_ASSOC);
+                $row = pg_fetch_array($res, NULL, PGSQL_ASSOC);
                 $filePic = $row['image'];
                 unlink("product-imgs/".$filePic);
                 pg_query($conn,"DELETE FROM product WHERE product_id='$id'");
@@ -61,7 +61,7 @@ function deleteConfirm() {
                 FROM product a, category b
                 Where a.cat_id = b.cat_id ");
 
-                while($row=pg_fetch_array($result,NULL,PGSQL_ASSOC))
+                while($row=pg_fetch_array($result, NULL, PGSQL_ASSOC))
                 {
 			?>
             <tr>

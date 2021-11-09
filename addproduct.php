@@ -8,7 +8,7 @@
 		$result = pg_query($conn, $sqlstring);
 		echo "<select name='CategoryList' class='form-control'>
 		<option value='0'>Chose category</option>";
-		while ($row = pg_fetch_array($result,NULL,PGSQL_ASSOC)){
+		while ($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
 			echo "<option value='".$row['cat_id']."'>".$row['cat_name']."</option>";
 		}
 		echo "</select>";

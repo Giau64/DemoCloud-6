@@ -8,8 +8,8 @@
 		$result = pg_query($conn, $sqlstring);
 		echo "<select name='CategoryList' class='form-control'>
 			<option value='0'>Chose category</option>";
-			while ($row = pg_fetch_array($result,NULL,PGSQL_ASSOC)){
-				if($row['Cat_ID'] == $selectedValue)
+			while ($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
+				if($row['cat_id'] == $selectedValue)
 				{
 					echo "<option value='".$row['cat_id']."' selected>".$row['cat_name']."</option>";
 				}
@@ -27,7 +27,7 @@
 		FROM product WHERE product_id = '$id' ";
 
 		$result = pg_query($conn, $sqlstring);
-		$row = pg_fetch_array($result,NULL,PGSQL_ASSOC);
+		$row = pg_fetch_array($result, NULL, PGSQL_ASSOC);
 		
 		$proname =$row["product_name"];
 		$detail=$row['prodes'];

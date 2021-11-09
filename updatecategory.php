@@ -8,7 +8,7 @@
 		{
 			$id= $_GET["id"];
 			$result = pg_query($conn,"SELECT * FROM category where cat_id='$id'");
-			$row = pg_fetch_array($result,NULL,PGSQL_ASSOC);
+			$row = pg_fetch_array($result, NULL, PGSQL_ASSOC);
 			$cat_id = $row['cat_id'];
 			$cat_name = $row['cat_name'];
 			$cat_des = $row['cat_des'];
