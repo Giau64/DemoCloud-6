@@ -13,6 +13,16 @@
 		}
 		echo "</select>";
 	} 
+    Function bind_Store_List($conn){
+		$sqlstring="SELECT store_id, store_name FROM store";
+		$result = pg_query($conn, $sqlstring);
+		echo "<select name='StoreList' class='form-control'>
+		<option value='0'>Chose Store</option>";
+		while ($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
+			echo "<option value='".$row['store_id']."'>".$row['store_name']."</option>";
+		}
+		echo "</select>";
+	} 
 	if(isset($_POST["btnAdd"]))
 	{
 		$id=$_POST["txtID"];
@@ -22,6 +32,7 @@
 		$qty=$_POST['txtQty'];
 		$pic=$_FILES['txtImage'];
 		$category=$_POST['CategoryList'];
+        $store=$_POST['StoreList'];
 		$err="";
 
 		if(trim($id)=="")
@@ -61,8 +72,8 @@
 						copy($pic['tmp_name'], "product-imgs/".$pic['name']);
 						$filePic = $pic['name'];
 						$sqlstring="INSERT INTO product
-						(product_id,product_name,price,prodes,quantity,image,cat_id)
-						VALUES ('$id','$proname',$price,'$detail',$qty,'$filePic','$category')";
+						(product_id,product_name,price,prodes,quantity,image,cat_id,store_id)
+						VALUES ('$id','$proname',$price,'$detail',$qty,'$filePic','$category','$store')";
 						pg_query($conn,$sqlstring);
 						echo '<meta http-equiv="Refresh" content="0; URL=?page=product"/>';
 					}
@@ -102,6 +113,12 @@
                 <label for="" class="col-sm-2 control-label">Product category(*): </label>
                 <div class="col-sm-10">
                     <?php bind_Category_List($conn); ?>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">Store(*): </label>
+                <div class="col-sm-10">
+                    <?php bind_Store_List($conn); ?>
                 </div>
             </div>
 

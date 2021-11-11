@@ -75,6 +75,7 @@
                     </form>
 							<li><a href="?page=category">Manage Category</a></li>
 							<li><a href="?page=product">Manage Product</a></li>
+                            <li><a href="?page=store">Manage Store</a></li>
                            
 						
                         
@@ -178,6 +179,12 @@
             include_once("updateproduct.php");
         }elseif($page== "update_customer"){
             include_once("update_customer.php");
+        }elseif($page== "store"){
+            include_once("manage_store.php");
+        }elseif($page== "add_store"){
+            include_once("add_store.php");
+        }elseif($page== "update_store"){
+            include_once("update_store.php");
         }
     }
     else{

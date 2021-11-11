@@ -47,6 +47,7 @@ function deleteConfirm() {
                 <th><strong>Price</strong></th>
                 <th><strong>Quantity</strong></th>
                 <th><strong>Category ID</strong></th>
+                <th><strong>Store ID</strong></th>
                 <th><strong>Image</strong></th>
                 <th><strong>Edit</strong></th>
                 <th><strong>Delete</strong></th>
@@ -57,7 +58,7 @@ function deleteConfirm() {
             <?php
                 include_once("connection.php");
 				$No=1;
-                $result=pg_query($conn,"SELECT product_id,product_name, price, quantity, image, cat_name
+                $result=pg_query($conn,"SELECT product_id,product_name, price, quantity, image, cat_name, store_name
                 FROM product a, category b
                 Where a.cat_id = b.cat_id ");
 
@@ -71,6 +72,7 @@ function deleteConfirm() {
                 <td><?php  echo $row["price"];?></td>
                 <td><?php echo $row["quantity"];?></td>
                 <td><?php  echo $row["cat_name"];?></td>
+                <td><?php  echo $row["store_name"];?></td>
                 <td align='center' class='cotNutChucNang'>
                     <img src='product-imgs/<?php echo $row['image']?>' border='0' width="50" height="50" />
                 </td>
