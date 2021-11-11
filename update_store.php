@@ -54,7 +54,7 @@
 		}
 		else
         {
-			echo '<meta http-equiv="Refresh" content="0; URL=?page=category_management"/>';
+			echo '<meta http-equiv="Refresh" content="0; URL=?page=store"/>';
         }
 	?>
      <?php

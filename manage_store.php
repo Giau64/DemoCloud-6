@@ -61,7 +61,7 @@ function deleteConfirm() {
                 <td style='text-align:center'><a href="?page=update_store&&id=<?php echo $row["store_id"]; ?>">
                         <img src='images/edit.jpg' border='0' /></a></td>
                 <td style='text-align:center'>
-                    <a href="?page=category&&function=del&&id=<?php echo $row["store_id"]; ?>"
+                    <a href="?page=store&&function=del&&id=<?php echo $row["store_id"]; ?>"
                         onclick="return deleteConfirm()">
                         <img src='images/delete.jpg' border='0' /></a>
                 </td>
