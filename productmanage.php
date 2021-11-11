@@ -59,8 +59,8 @@ function deleteConfirm() {
                 include_once("connection.php");
 				$No=1;
                 $result=pg_query($conn,"SELECT product_id,product_name, price, quantity, image, cat_name, store_name
-                FROM product a, category b
-                Where a.cat_id = b.cat_id ");
+                FROM product a, category b, store c
+                Where a.cat_id = b.cat_id and a.store_id = c.store_id");
 
                 while($row=pg_fetch_array($result, NULL, PGSQL_ASSOC))
                 {
