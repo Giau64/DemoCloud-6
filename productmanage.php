@@ -35,6 +35,7 @@ function deleteConfirm() {
     ?>
 <form name="frm" method="post" action="">
     <p>
+         <b align = "center">Product Management</b>
         <img src="images/add.png.jpg"  width="16" height="16" border="0" /><a href="?page=add_product"> Add
             new</a>
     </p>
