@@ -37,7 +37,7 @@ include_once("connection.php");
 ?>
 
 <div class="container">
-	<h2>ADD STOREY</h2>
+	<h2>ADD STORE</h2>
 	<form method="POST" class="form-horizontal" role="form">
 	<div class="form-group">
 		<label>StoreID:</label>
